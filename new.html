@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="assets/images/favicon-32x32.png" type="image/x-icon">
+  <title>Done By Kannan</title>
+</head>
+<style>
+    body{
+        background-color: rgb(45, 46, 63);
+    }
+    @font-face {
+      font-family:qw ;
+      src: url(assets/fonts/Roboto-Regular.ttf);
+    }
+    .message{
+        font-family:qw;
+        background-color: rgb(255,255,255);
+        height: 110px;
+        width: 430px;
+        margin-left: 70px;
+        font-size: 1rem;
+    }
+    @font-face {
+      font-family:er ;
+      src: url(assets/fonts/Roboto-Bold.ttf);
+    }
+    img{
+        margin-top: 35px;
+        margin-left: 70px;
+    }
+    .cl{
+        display: flex;
+        flex-direction: column;
+        background-color: rgb(255,255,255);
+        height: 450px;
+        width: 550px;
+        border-radius: 20px;  
+    }
+    .name4{
+        margin-top: 20px;
+        background-color: rgb(255,255,255);
+        height: 130px;
+        width: 430px;
+        margin-left: 70px;
+        font-size: 3rem;
+        font-family:er;
+    }
+    button{
+        height: 30px;
+        width: 200px;
+        margin-left: 70px;
+    }
+.m{
+    margin-top: 300px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    
+    
+}
+button{
+      display: inline-block;
+      height:50px ;
+      min-width:430px ;
+      background-color:  rgb(45, 46, 63);
+      border-style: solid;
+      border: 1px black;
+      border-radius:7px ;
+      color: white;
+      font-family:er;
+      font-size: 12px;
+      font-weight: 400;
+      cursor: pointer;
+      
+    }
+    button:hover{
+      background:linear-gradient(90deg,rgb(253,86,116),rgb(255,103,66));
+      box-shadow:2px 2px 3px  rgb(255,103,66)  ;
+    }
+    @media (max-width:428px) {
+      .m{
+        margin-top: 60px;
+        display: flex;  
+}
+body{
+        background-color: rgb(255,255,255);
+    }
+.cl{
+  display: inline-block;
+        flex-direction: column;
+        flex-wrap: wrap;
+        background-color: rgb(255,255,255);
+        height: 750px;
+        width: 400px;
+        border-radius: 20px;   
+    }
+    img{
+        margin-top: 35px;
+        margin-left: 10px;
+    }
+    .name4{
+        margin-top: 20px;
+        background-color: rgb(255,255,255);
+        height: 150px;
+        width: 240px;
+        margin-left: 10px;
+        font-size: 2.8rem;
+        font-family:er;
+    }
+    .message{
+        font-family:qw;
+        background-color: rgb(255,255,255);
+        height: 150px;
+        width: 350px;
+        margin-left: 10px;
+        font-size: 1rem;
+    }
+    button{
+      display: inline-block;
+      height:50px ;
+      min-width:300px ;
+      background-color:  rgb(45, 46, 63);
+      border-style: solid;
+      border: 1px black;
+      border-radius:7px ;
+      color: white;
+      font-family:qw;
+      font-size: 12px;
+      font-weight: 400;
+      cursor: pointer;
+      margin-top: 200px;
+      margin-left: 30px;
+      
+    }
+    }
+    @media (max-width:320px){
+      img{
+        margin-top: 35px;
+        margin-left: 25px;
+    }
+    .name4{
+        margin-top: 20px;
+        background-color: rgb(255,255,255);
+        height: 150px;
+        width: 220px;
+        margin-left: 25px;
+        font-size: 2.3rem;
+        font-family:er;
+    }
+    .message{
+        height: 190px;
+        width: 290px;
+        margin-left: 25px;
+        font-size: 15px;
+    }
+    button{
+      display: inline-block;
+      height:50px ;
+      min-width:280px ;
+      background-color:  rgb(45, 46, 63);
+      font-weight: 400;
+      cursor: pointer;
+      margin-top: 200px;
+      margin-left: 20px;  
+    }
+    }
+    @media (max-width:240px){
+      button{
+      display: inline-block;
+      height:50px ;
+      min-width:230px ;
+      background-color:  rgb(45, 46, 63);
+      
+      font-weight: 400;
+      cursor: pointer;
+      margin-top: 0px;
+      margin-left: 20px;
+      
+    }
+    .message{
+        height: 230px;
+        width: 250px;
+        margin-left: 25px;
+        font-size: 13px;
+    }
+    }
+</style>
+<body>
+<div class="m">
+<div class="cl">
+    <div>
+        <img src="assets/images/icon-success.svg" alt="">
+    </div>
+    <div class="name4">
+        Thanks for subscribing!
+    </div>
+  <div id="confirmation-message" class="message">
+  </div>
+  <button onclick="clearConfirmation()">Dismiss Message</button>
+</div>
+</div>
+  <script>
+    
+    function populateConfirmation() { 
+      var urlParams = new URLSearchParams(window.location.search);
+      var confirmationMessage = urlParams.get('message');
+
+      var confirmationDiv = document.getElementById('confirmation-message');
+      confirmationDiv.innerHTML = confirmationMessage;
+    }
+    function clearConfirmation() {
+      var confirmationDiv = document.getElementById('confirmation-message');
+      confirmationDiv.innerHTML = '';
+
+      window.location.href = 'index.html';
+    }
+    window.onload = populateConfirmation;
+  </script>
+</body>
+</html>
